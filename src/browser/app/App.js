@@ -1,8 +1,6 @@
 /* @flow */
 import './App.scss';
 import * as themes from './themes';
-import Footer from './Footer';
-import Header from './Header';
 import Helmet from 'react-helmet';
 import React from 'react';
 import favicon from '../../common/app/favicon';
@@ -44,9 +42,7 @@ let App = ({ children, currentLocale, currentTheme }) => (
           ...favicon.link,
         ]}
       />
-      <Header />
       {children}
-      <Footer />
     </Container>
   </ThemeProvider>
 );
