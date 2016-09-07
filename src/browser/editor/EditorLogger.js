@@ -13,7 +13,7 @@ class EditorLogger extends Component {
   }
 
   render() {
-    return false;
+    return null;
   }
 }
 

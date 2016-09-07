@@ -1,8 +1,8 @@
 /* @flow */
 import React, { Component } from 'react';
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import { Flex } from '../app/components';
-import { Editor } from 'draft-js';
+import { Editor, EditorState } from 'draft-js';
 import { connect } from 'react-redux';
 import { setEditorState } from '../../common/editor/actions';
 import debounce from 'lodash/debounce';
@@ -12,12 +12,16 @@ const EDITOR_DEBOUNCE = 500;
 class EditorInput extends Component {
   constructor(props, context) {
     super(props, context);
-    this.onEditorChange = this.onEditorChange.bind(this);
-    this.setEditorState = debounce(this.setEditorState, EDITOR_DEBOUNCE);
+    (this:any).onEditorChange = this.onEditorChange.bind(this);
+    (this:any).setEditorState = debounce(this.setEditorState, EDITOR_DEBOUNCE);
     this.state = {
       editorState: props.editorState,
     };
   }
+
+  state: {
+    editorState: EditorState,
+  };
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -33,7 +37,7 @@ class EditorInput extends Component {
     return shouldComponentUpdate;
   }
 
-  onEditorChange(editorState) {
+  onEditorChange(editorState: EditorState) {
     this.setState({ editorState });
     this.setEditorState(editorState);
   }
@@ -56,7 +60,7 @@ class EditorInput extends Component {
 
 EditorInput.propTypes = {
   setEditorState: React.PropTypes.func.isRequired,
-  editorState: React.PropTypes.object.isRequired,
+  editorState: React.PropTypes.instanceOf(EditorState).isRequired,
 };
 
 export default connect(state => ({

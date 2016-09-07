@@ -1,7 +1,9 @@
+/* @flow */
 import * as jsDiff from 'diff';
+import { ContentState } from 'draft-js';
 import OperationWrapper from './OperationWrapper';
 
-const diffContentStateText = (previousContentState, contentState) => {
+const diffContentStateText = (previousContentState: ContentState, contentState: ContentState) => {
   console.time('diffContentStateText'); //eslint-disable-line
 
   const differences = jsDiff.diffChars(

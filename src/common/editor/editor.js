@@ -1,5 +1,5 @@
 /* @flow */
-import Immutable from 'immutable';
+import * as Immutable from 'immutable';
 import { Record } from '../transit';
 import { EditorState, ContentState } from 'draft-js';
 
