@@ -9,7 +9,7 @@ class EditorLogger extends Component {
       this.props.previousContentState,
       this.props.contentState
     );
-    console.log(changes); // eslint-disable-line
+    console.log(changes.toJSON()); // eslint-disable-line
   }
 
   render() {
