@@ -3,14 +3,15 @@ import Immutable from 'immutable';
 import { Record } from '../transit';
 import { EditorState, ContentState } from 'draft-js';
 
-const DEFAULT_TEXT = `
-Hi there 👋
+const DEFAULT_TEXT = (
+`Hi there 👋
 
 The purpose of this example is the test the ability of Draft.js
 to work with Operational Transformation. Try to change some content
 and open your console to review changes as operations.
 
-Thanks for trying 👌`;
+Thanks for trying 👌`
+);
 
 const EditorRecord = Record({
   // Default EditorState for testing purpose
