@@ -7,6 +7,7 @@ import intl from './intl/reducer';
 import nativeRouting from '../native/routing/reducer';
 import themes from './themes/reducer';
 import todos from './todos/reducer';
+import editor from './editor/reducer';
 import users from './users/reducer';
 import { FIREBASE_ON_AUTH } from '../common/lib/redux-firebase/actions';
 import { combineReducers } from 'redux';
@@ -50,6 +51,7 @@ const configureReducer = (initialState: Object) => {
     routing,
     themes,
     todos,
+    editor,
     users,
   });
 

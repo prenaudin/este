@@ -6,6 +6,7 @@ import App from './app/App';
 import Fields from './fields/FieldsPage';
 import Firebase from './firebase/FirebasePage';
 import Home from './home/HomePage';
+import Editor from './editor/EditorPage';
 import Intl from './intl/IntlPage';
 import Me from './me/MePage';
 import NotFound from './notfound/NotFoundPage';
@@ -26,7 +27,8 @@ const createRoutes = (getState: Function) => {
 
   return (
     <Route component={App} path="/">
-      <IndexRoute component={Home} />
+      <IndexRoute component={Editor} />
+      <Route component={Home} path="home" />
       <Route component={Fields} path="fields" />
       <Route component={Firebase} path="firebase" />
       <Route component={Intl} path="intl" />
