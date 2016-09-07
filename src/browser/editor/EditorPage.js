@@ -6,11 +6,13 @@ import {
   View,
 } from '../app/components';
 import EditorInput from './EditorInput';
+import EditorLogger from './EditorLogger';
 
 const EditorPage = () => (
   <View>
     <Title message="Draft.js with OT logging" />
     <EditorInput />
+    <EditorLogger />
   </View>
 );
 
